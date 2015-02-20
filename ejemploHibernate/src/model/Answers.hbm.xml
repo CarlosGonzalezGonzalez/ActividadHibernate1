@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-feb-2015 14:10:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Answers" table="answers" catalog="quizit">
+        <id name="id" type="byte">
+            <column name="_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="questions" class="model.Questions" fetch="select">
+            <column name="_idpregunta" />
+        </many-to-one>
+        <property name="text" type="string">
+            <column name="text" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>
