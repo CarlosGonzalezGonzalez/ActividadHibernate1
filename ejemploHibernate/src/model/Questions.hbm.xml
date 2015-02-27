@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 18-feb-2015 14:10:30 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 27-feb-2015 10:59:16 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="model.Questions" table="questions" catalog="quizit">
-        <id name="id" type="java.lang.Byte">
-            <column name="_id" />
-            <generator class="identity" />
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
         </id>
         <property name="text" type="string">
             <column name="text" length="40" />
         </property>
         <set name="answerses" table="answers" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="_idpregunta" />
+                <column name="idpregunta" />
             </key>
             <one-to-many class="model.Answers" />
         </set>
