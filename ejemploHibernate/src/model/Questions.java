@@ -43,7 +43,7 @@ public class Questions implements java.io.Serializable {
 		this.text = text;
 	}
 
-	public Set getAnswerses() {
+	public Set<Answers> getAnswerses() {
 		return this.answerses;
 	}
 
